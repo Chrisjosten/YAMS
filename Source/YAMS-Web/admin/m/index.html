@@ -3,122 +3,65 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>YAMS Admin</title>
-
+<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/css/m/yamstheme.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script
 <!-- jQuery -->
-<script type="text/javascript" src="../../assets/js/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="../../assets/js/jquery-ui-1.8.16.min.js"></script>
-<script type="text/javascript" src="../../assets/js/jquery.layout.min.js"></script>
-<script type="text/javascript" src="../../assets/js/jquery.layout.resizePaneAccordions.js"></script>
-<script type="text/javascript" src="../../assets/js/jquery.contextMenu.js"></script>
-<!-- jQuery CSS -->
-<link rel="stylesheet" type="text/css" href="../../assets/css/base/jquery.ui.all.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/css/blitzer/jquery-ui-1.8.16.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/css/jquery.layout.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/css/jquery.contextMenu.css" />
-
-<!-- YUI -->
-<link rel="stylesheet" type="text/css" href="/assets/css/yui.menu.css" />
-<script type="text/javascript" src="/assets/js/yui.menu.js"></script>
 
 <!-- Load YAMS JS -->
-<link rel="stylesheet" type="text/css" href="../../assets/css/admin.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/admin.css" />
 <script type="text/javascript">
 	var YAMSModules = [ "admin", "YAMSpanel", "YAMSmenu", "YAMSlayout" ];
 </script>
-<script type="text/javascript" src="../../assets/js/global.js"></script>
+<script type="text/javascript" src="/assets/js/global.js"></script>
 
 </head>
 
 <body>
+<div data-theme="a" data-role="page" id="home">
+<!-- header -->
+<div data-role="header" data-theme="a">
+<a href="#" data-theme="a" data-role="button" data-icon="grid">Menu</a>
+<h1>YAMS Admin Mobile BETA</h1>
+</div>
+<div data-role="content">
+<script>
+$( "#menu" ).listview('refresh'); 
+</script>
 
-    <div id="header" class="ui-layout-north"></div>
-    
-    <div id="yams-log" class="ui-layout-south"></div>
-    
-    <div id="server-status" class="ui-layout-east" style="display: none;">
-    	<h3 class="ui-widget-header">Server Status</h3>
-        <div class="ui-layout-content">
-        	<div id="server-accordion" class="basic"></div>
-        </div>
-    </div>
-   
-    <div id="main" class="ui-layout-center" style="display: none;">
-    	<h3 class="ui-widget-header"></h3>
-        <div id="server-console" style="display: none;">
-            <ul>
-                <li><a href="#console-tab">Console</a></li>
-                <li><a href="#chat-tab">Chat</a></li>
-                <li><a href="#settings-tab">Settings</a></li>
-                <li><a href="#apps-tab">Apps</a></li>
-                <li><a href="#connections-tab">Connections</a></li>
-                <li><a href="#whitelist-tab">Players</a></li>
-            </ul>
-            <div id="console-tab">
-                <div id="console" class="log"></div>
-                <div class="command console">
-                    <input type="text" class="console-input" id="console-input" /><button id="console-send" class="send">Send</button>
-                </div>
-            </div>
-            <div id="chat-tab">
-                <div id="chat" class="log"></div>
-                <div class="command chat">
-                    <input type="text" class="chat-input" id="chat-input" /><button id="chat-send" class="send">Say</button>
-                </div>
-            </div>
-            <div id="settings-tab">
-                <img src="../../assets/images/ajax-loader.gif" />
-            </div>
-            <div id="apps-tab">
-                <img src="../../assets/images/ajax-loader.gif" />
-            </div>
-            <div id="connections-tab">
-                <img src="../../assets/images/ajax-loader.gif" />
-            </div>
-            <div id="whitelist-tab">
-                <img src="../../assets/images/ajax-loader.gif" />
-            </div>
-        </div>
-    </div>
+<div data-role="collapsible-set">
+<div data-theme="a" data-role="collapsible" data-inset="true" data-content-theme="a">
+<h3>Chat</h3>
+<p>Loading...</p>
+</div>
+<div data-content-theme="a" data-theme="a" data-role="collapsible" data-inset="true">
+<h3>Control</h3>
+<p></p>
+</div>
+<div  data-content-theme="a" data-theme="a" data-role="collapsible" data-inset="true">
+<h3>Console</h3>
+<p></p>
+</div>
+<div data-content-theme="a" data-theme="a" data-role="collapsible" data-inset="true">
+<h3>Settings</h3>
+<p></p>
+</div>
+</div>
 
-    
-    <ul id="player-menu" class="contextMenu">
-        <li class="whisper">
-            <a href="#whisper">Whisper</a>
-        </li>
-        <li class="tp separator">
-            <a href="#tp">Teleport</a>
-        </li>
-        <li class="xp">
-            <a href="#xp">Give XP</a>
-        </li>
-        <li class="give">
-            <a href="#give">Give Item</a>
-        </li>
-        <li class="survival separator">
-            <a href="#survival">Set Survival Mode</a>
-        </li>
-        <li class="creative">
-            <a href="#creative">Set Creative Mode</a>
-        </li>
-        <li class="op separator">
-            <a href="#op">Make Op</a>
-        </li>
-        <li class="deop">
-            <a href="#deop">Remove Op</a>
-        </li>
-        <li class="kick separator">
-            <a href="#kick">Kick</a>
-        </li>
-        <li class="ban">
-            <a href="#ban">Ban Player</a>
-        </li>
+</div>
 
-    </ul>
 
-  <!-- UserVoice JavaScript SDK (only needed once on a page) -->
+
+
+</div>
+<!--
+  <!//-- UserVoice JavaScript SDK (only needed once on a page) --//>
   <script>      (function () { var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true; uv.src = '//widget.uservoice.com/MCvxV66Yf75i62ONHDKw.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s) })()</script>
 
-  <!-- A tab to launch the Classic Widget -->
+  <!//-- A tab to launch the Classic Widget --//>
   <script>
       UserVoice = window.UserVoice || [];
       UserVoice.push(['showTab', 'classic_widget', {
@@ -132,6 +75,6 @@
           tab_inverted: false
       }]);
   </script>
-
+-->
 </body>
 </html>
