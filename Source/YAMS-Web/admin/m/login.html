@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>YAMS Admin Login</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/m/admin.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/m/admin.css" />
 </head>
 <body class="login">
 
@@ -11,10 +11,8 @@
             <h1><a href="http://rcb.li/yams" target="_blank"><abbr title="Yet Another Minecraft Server">YAMS</abbr></a></h1><br/>
         </div>
         <form action="/login/" method="post">
-            <label for="strUsername">username</label>
-            <input type="text" name="strUsername" value="admin" class="text" /><br/>
-            <label for="strPassword">password</label>
-            <input type="password" name="strPassword" class="text" /><br/>
+            <input type="text" name="strUsername" value="admin" class="text" placeholder="Username"/><br/>
+            <input type="password" name="strPassword" class="text" placeholder="password" /><br/>
             <input type="submit" value="Login" />
         </form>
         <div class="version-tag">v0.13<br /><a href="https://github.com/richardbenson/YAMS/wiki/Version-history" target="_blank">Version History</a></div>
